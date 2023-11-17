@@ -1,0 +1,16 @@
+[Unit]
+Description = This service subscribes to topics on IoT Platforms and collects data.
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = python3 /home/apliatsios/dlyberis/multi_clients_MQTT/multi_client_MQTT.py
+User = apliatsios
+Group = apliatsios
+Restart = on-failure
+SyslogIdentifier =MQTT_Listener.log
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy = multi-user.target

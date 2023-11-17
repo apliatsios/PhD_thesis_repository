@@ -1,0 +1,5 @@
+aiohttp==3.8.1
+APScheduler==3.9.1
+neo4j==4.4.2
+paho_mqtt==1.6.1
+requests==2.25.1

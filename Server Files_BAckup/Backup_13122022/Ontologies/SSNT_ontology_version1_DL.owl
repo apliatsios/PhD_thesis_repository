@@ -1,0 +1,738 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/iot/ontology/fiesta-iot#"
+     xml:base="http://purl.org/iot/ontology/fiesta-iot"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:qu="http://purl.org/NET/ssnx/qu/qu#"
+     xmlns:dul="http://www.loa.istc.cnr.it/ontologies/DUL.owl#"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://purl.oclc.org/NET/ssnx/ssn#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:qudt="http://data.qudt.org/qudt/owl/1.0.0/unit.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ssnt="http://purl.org/iot/ontology/ssnt#"
+     xmlns:time="http://www.w3.org/2006/time#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:ssnt1="http://www.co-ode.org/ontologies/ssnt#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:onemtom="http://www.onem2m.org/ontology/Base_Ontology/base_ontology#"
+     xmlns:iot-lite="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
+     xmlns:fiesta-iot="http://purl.org/iot/ontology/fiesta-iot#"
+     xmlns:mthreelite="http://purl.org/iot/vocab/m3-lite#">
+    <owl:Ontology rdf:about="http://purl.org/iot/ontology/ssnt">
+        <dc:contributor xml:lang="en">Amelie Gyrard, NUIG, Galway</dc:contributor>
+        <dc:contributor xml:lang="en">David Gomez, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">Garvita Bajaj, Inria, Paris (Past)</dc:contributor>
+        <dc:contributor xml:lang="en">Jorge Lanza, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">Luis Sanchez, UC, Santander</dc:contributor>
+        <dc:contributor xml:lang="en">Rachit Agarwal, Inria, Paris</dc:contributor>
+        <dc:contributor xml:lang="en">Tarek Elsaleh, UNIS, Surrey</dc:contributor>
+        <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/fiesta-iot.png"/>
+        <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/observationannotation.png"/>
+        <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/observationgraph.png"/>
+        <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/resourceannotation.png"/>
+        <dc:description rdf:resource="http://ontology.fiesta-iot.eu/ontologyDocs/resourcegraph.png"/>
+        <dc:description xml:lang="en">Many testbeds owning devices or applications interacting with the sensors, store their inherent observations and other related data in their own proprietary format. In other words, making a testbed independent and isolated from others that cannot directly interact with each other. Differences in the data format lead to interoperability issues between the testbeds and much work has to be done in order to ensure the compatibility. One has to understand different data formats and create the mapping between them. As a result, a testbed must understand other testbed&apos;s format and create the mapping both while sending and receiving information. One method to accomplish interoperability is through the usage of semantic-based technologies to annotate all the information shared by the platforms. Nevertheless, some of the relevant existing ontologies promise interoperability but: 
+
+- do not address the problem to describe the observation in an interoperable manner to ease further tasks, such as reasoning, 
+- many of them are domain-specific and cannot be applied across domains, 
+- they have missing concepts and do not suffice the needs of the measurements provided by the sensors, and 
+- many ontologies do not follow best practices making it hard to correctly interpret and reuse concepts.
+
+
+In order to address the above-mentioned limitations, we provide FIESTA-IoT ontology (a unified semantic model) that follows best practices. FIESTA-IoT Ontology is a merge of concepts from various ontologies such as IoT-lite, M3-lite Taxonomy, SSN, Time and DUL (see Figure 1). The FIESTA-IoT Ontology is divided into 2 parts: resource description and observations produced. One has to follow the Figure 2 and Figure 3, respectively, for understanding what all concepts are associated with resource description and observation. Using such information testbeds can annotate their data to FIESTA-IoT specific requirements and the annotators developed can achieve FIESTA-IoT certification. For reference we provide sample annotations as figure (see Figure 4 and Figure 5) for both resource graph and observation graph.
+
+For more details please see:
+
+- R. Agarwal, D. Fernandez, T. Elsaleh, A. Gyrard, J. Lanza, L. Sanchez, N. Georgantas, V. Issarny, &quot;Unified IoT Ontology to Enable Interoperability and Federation of Testbeds&quot;, 3rd IEEE WF-IoT, Reston, VA, USA, 12-14 December 2016. (https://hal.inria.fr/hal-01386917/document)
+- FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.2 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.
+- FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.1 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.
+
+We further acknowledge, testbed provider such as SmartSantander, UniS, KETI, Inria, and other open call testbeds for their valuable comments. Please report any errors to rachit.agarwal@inria.fr. 
+        </dc:description>
+        <dc:rights>Copyright EU H2020 FIESTA-IoT</dc:rights>
+        <dc:title xml:lang="en">FIESTA-IoT Ontology</dc:title>
+        <dcterms:bibliographicCitation xml:lang="en">FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.1 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation xml:lang="en">FIESTA-IoT Consortium (R. Agarwal editor), &quot;Deliverable D3.1.2 Semantic Models for Testbeds, Interoperability and Mobility Support, and Best Practices&quot;, project FIESTA-IoT deliverable, 2016.</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation xml:lang="en">R. Agarwal, D. Fernandez, T. Elsaleh, A. Gyrard, J. Lanza, L. Sanchez, N. Georgantas, V. Issarny, &quot;Unified IoT Ontology to Enable Interoperability and Federation of Testbeds&quot;, 3rd IEEE WF-IoT, Reston, VA, USA, 12-14 December 2016. (https://hal.inria.fr/hal-01386917/document)</dcterms:bibliographicCitation>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2016-04-28</dcterms:issued>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-11-27</dcterms:modified>
+        <vann:preferredNamespacePrefix>fiesta-iot</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>http://purl.org/iot/ontology/fiesta-iot#</vann:preferredNamespaceUri>
+        <rdfs:comment xml:lang="en">After a thorough analysis of existing Internet of Things (IoT) related ontologies, we propose FIESTA-IoT Ontology that aims to achieve semantic interoperability among heterogeneous testbeds. The Ontology is framed within the EU H2020 FIESTA-IoT project, that aims to seamlessly support the federation of testbeds through the usage of semantic-based technologies. The  FIESTA-IoT ontology takes inspiration from the well-known Noy et al. methodology for reusing and interconnecting existing ontologies. To build the ontology, we leverage a number of core concepts from various mainstream ontologies and taxonomies, such as Semantic Sensor Network (SSN), M3-lite (a lite version of M3 ontology), WGS84, IoT-lite, Time, and DUL ontology. Please report any errors to rachit.agarwal@inria.fr</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FIESTA-IoT</rdfs:label>
+        <owl:versionInfo>3.1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/identifier -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/source -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/bibliographicCitation -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/bibliographicCitation"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ssnt#name -->
+
+    <owl:AnnotationProperty rdf:about="http://www.co-ode.org/ontologies/ssnt#name"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#equivalentClass -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#equivalentClass"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#float -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float">
+        <rdfs:label>float</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#belongs -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#belongs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Channel"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:label>belongs</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#computesBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#computesBy">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#ServiceProperty"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>computesBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasChannel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasChannel">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#Channel"/>
+        <rdfs:label>hasChannel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Crowd_Sourcing_Entity"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#IoT_Entity"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#OpenData_Entity"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#User"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#GeoLocation"/>
+        <rdfs:label>hasLocation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasObject -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasObject">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-LocationRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#FOAFRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#UsersRelationship"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>hasObject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasPlatform -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasPlatform">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:label>hasPlatform</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasSensor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasSensor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:label>hasSensor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasSensorProperty -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasSensorProperty">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Crowd_Sourcing_Entity"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#OpenData_Entity"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#SensorProperty"/>
+        <rdfs:label>hasSensorProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasServiceProperty -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasServiceProperty">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Service"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#ServiceProperty"/>
+        <rdfs:label>hasServiceProperty</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasSubject">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#FOAFRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#UsersRelationship"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>hasSubject</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#needService -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#needService">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#User"/>
+        <rdfs:range rdf:resource="http://purl.org/iot/ontology/ssnt#Service"/>
+        <rdfs:label>needService</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#trustBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/iot/ontology/ssnt#trustBy">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>trustBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:label>topObjectProperty</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#Name">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#channel_id -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#channel_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Channel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>channel_id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasLat -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasLat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#GeoLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasLat</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasLong -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasLong">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#GeoLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasLong</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasStatus">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-LocationRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#FOAFRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#UsersRelationship"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasStatus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasTimeStamp -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasTimeStamp">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-LocationRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#FOAFRelationship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#SensorProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#ServiceProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#UsersRelationship"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasTimeStamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasTrustValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasTrustValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label>hasTrustValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#SensorProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#ServiceProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>hasUnit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#hasValue">
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#SensorProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/iot/ontology/ssnt#ServiceProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label>hasValue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#id -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/iot/ontology/ssnt#id">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:label>topDataProperty</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity">
+        <rdfs:comment xml:lang="en">Any object that is relevant from a user or application perspective. (IoT-A Definition)</rdfs:comment>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor">
+        <dc:source>skos:exactMatch &apos;sensor&apos; [SensorML OGC-0700]
+		                    http://www.opengeospatial.org/standards/sensorml 
+
+                                skos:closeMatch &apos;observation procedure&apos; [O&amp;M] 
+                                http://www.opengeospatial.org/standards/om 
+
+O&amp;M allows sensors, methods, instruments, systems, algorithms and process chains as the processUsed of an observation; this ontology allows a similar range of things (anything that can do sensing), just they are all grouped under the term sensor (which is thus wider than the O&amp;M concept).</dc:source>
+        <rdfs:comment>A sensor can do (implements) sensing: that is, a sensor is any entity that can follow a sensing method and thus observe some Property of a FeatureOfInterest.  Sensors may be physical devices, computational methods, a laboratory setup with a person following a method, or any other thing that can follow a Sensing Method to observe a Property.</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Channel -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Channel">
+        <rdfs:label>Channel</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Co-LocationRelationship -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Co-LocationRelationship">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:label>Co-LocationRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Co-OwnerRelationship">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:label>Co-OwnerRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Co-WorkRelationsihp">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:label>Co-WorkRelationsihp</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Crowd_Sensing_Platform -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Crowd_Sensing_Platform">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:label>Crowd_Sensing_Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Crowd_Sourcing_Entity -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Crowd_Sourcing_Entity">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>Crowd_Sourcing_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#FOAFRelationship -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#FOAFRelationship">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:label>FOAFRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#GeoLocation -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#GeoLocation">
+        <rdfs:label>GeoLocation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#IoT_Entity -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#IoT_Entity">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>IoT_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#IoT_Platform -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#IoT_Platform">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:label>IoT_Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#OpenData_Entity -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#OpenData_Entity">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Entity"/>
+        <rdfs:label>OpenData_Entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#OpenData_Platform -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#OpenData_Platform">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#Platform"/>
+        <rdfs:label>OpenData_Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Platform -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Platform">
+        <rdfs:label>Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#SensorProperty -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#SensorProperty">
+        <rdfs:label>SensorProperty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#Service -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#Service">
+        <rdfs:label>Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#ServiceProperty -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#ServiceProperty">
+        <rdfs:label>ServiceProperty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#SocialRelathionship -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#SocialRelathionship">
+        <rdfs:label>SocialRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#User -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#User">
+        <rdfs:label>User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/iot/ontology/ssnt#UsersRelationship -->
+
+    <owl:Class rdf:about="http://purl.org/iot/ontology/ssnt#UsersRelationship">
+        <rdfs:subClassOf rdf:resource="http://purl.org/iot/ontology/ssnt#SocialRelathionship"/>
+        <rdfs:label>UsersRelationship</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:label>Thing</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

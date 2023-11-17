@@ -1,0 +1,16 @@
+[Unit]
+Description = This service collects Open source air quality data
+After = network.target
+
+[Service]
+Type = simple
+ExecStart = python3 /home/apliatsios/dlyberis/api_requests/api_scheduler.py
+User = apliatsios
+Group = apliatsios
+Restart = on-failure
+SyslogIdentifier = api_request.log
+RestartSec = 5
+TimeoutStartSec = infinity
+
+[Install]
+WantedBy = multi-user.target

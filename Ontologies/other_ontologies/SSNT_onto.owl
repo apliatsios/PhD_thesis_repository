@@ -1,0 +1,656 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#"
+     xml:base="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#belongsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasDOI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasDOI">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLocation">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfMembers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfMembers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasOwner -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasOwner">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Owner"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasServiceParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasServiceParameter">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasSocialRelationWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasSocialRelationWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasTask">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isCalculatedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isCalculatedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isFollower -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isFollower">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isFriendWIth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isFriendWIth">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#isMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#channel_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#channel_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#createdAt -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#createdAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#entry_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#entry_id">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasAQIValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasAQIValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AQI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AQI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#GpsLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLong -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasLong">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#GpsLocation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfFriends -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfFriends">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfMembers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#hasNumberOfMembers">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AQI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AQI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityServiceParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Application -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Application"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdSensingData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdSensingData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdsourcingData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdsourcingData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrowdSensingEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrowdSensingEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Follower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Follower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Friend -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Friend">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#GpsLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#GpsLocation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#LatLonPoint"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTMember -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTMember">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#LatLonPoint -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#LatLonPoint">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Member -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Member"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#MobileSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#MobileSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#MobileSensorData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#MobileSensorData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SensorData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Noise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Noise">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#AirPollutionParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenDataEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenDataEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenDataMember -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenDataMember">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Member"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Owner -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Owner">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#People -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#People"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Route -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Route">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SemanticSocialNetwork"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SensorData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SensorData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#IoTData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartAgricultureApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartAgricultureApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartAgricultureService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartAgricultureService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityServiceParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartCityServiceParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#ServiceParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartGridService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SmartGridService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialMediaData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialMediaData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdsourcingData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialMediaEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialMediaEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrowdSensingEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SocialRelation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#StaticSensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#StaticSensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Sensor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#StaticSensorData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#StaticSensorData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#SensorData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#People"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WearableEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WearableEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrowdSensingEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WearablesData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WearablesData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#CrouwdsourcingData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WebService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WebService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenDataEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WebServiceData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#WebServiceData">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#OpenData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#eHealthApplication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#eHealthApplication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Application"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#eHealthService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#eHealthService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anton/ontologies/2022/1/SSNT_ontology#Service"/>
+    </owl:Class>
+    
+
+
+</rdf:RDF>
+    
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
