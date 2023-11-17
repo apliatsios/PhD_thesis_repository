@@ -1,0 +1,27 @@
+{
+  "name": "vue-options",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host --port 3000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.7.2",
+    "@popperjs/core": "^2.11.6",
+    "@vue/apollo-option": "^4.0.0-alpha.20",
+    "bootstrap": "^5.2.3",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
+    "leaflet": "^1.9.3",
+    "leaflet-routing-machine": "^3.2.12",
+    "mapbox-gl": "^2.11.1",
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.56.2",
+    "vite": "^4.0.0"
+  }
+}
